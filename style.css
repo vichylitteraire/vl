@@ -1,0 +1,164 @@
+/* 1. Сброс и базовые настройки */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 60px 0; /* Отступы сверху и снизу, чтобы контент не обрезался */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #4b5332; /* Твой благородный хаки */
+    
+    /* Фон зафиксирован */
+    background-image: url('../afiche/img/IMG_1715.JPG');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    
+    /* Центрирование карточки */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Начинаем сверху, чтобы не обрезало голову */
+    min-height: 100vh;
+}
+
+/* 2. Основной контейнер-карточка */
+.journal-main {
+    background: rgba(255, 255, 255, 0.92); /* Светлый молочный фон */
+    backdrop-filter: blur(15px); /* Эффект матового стекла */
+    width: 90%;
+    max-width: 1100px;
+    padding: 80px; /* Много свободного места внутри */
+    border-radius: 40px;
+    box-shadow: 0 40px 120px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+/* 3. Шапка */
+.journal-header {
+    text-align: center;
+}
+
+.logo-ink {
+    max-width: 200px;
+    height: auto;
+    filter: sepia(0.3) contrast(1.1); /* Тон под хаки */
+}
+
+/* 4. Сетка контента (Две колонки) */
+.journal-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Делим на 2 равные части */
+    gap: 60px 80px; /* Простор между колонками */
+    text-align: left;
+}
+
+/* 5. Заголовки секций */
+.label-tag {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #8a8d7a; /* Светлый хаки для подзаголовков */
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* 6. Текст */
+.typewriter-text, .clipping-paper p, .list-minimal li {
+    font-size: 18px;
+    line-height: 1.8; /* Даем тексту дышать */
+    color: #353b24; /* Темный хаки для чтения */
+    margin: 0 0 20px 0;
+}
+
+/* Убираем лишний декор от старых стилей */
+.clipping-paper, .zine-section {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.list-minimal {
+    list-style: none;
+    padding: 0;
+}
+
+/* 7. Футер и кнопки */
+.journal-footer {
+    margin-top: 40px;
+    padding-top: 60px;
+    border-top: 1px solid rgba(75, 83, 50, 0.15);
+    text-align: center;
+}
+
+.fot {
+    font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    color: #4b5332;
+}
+
+.footer-nav {
+    display: block;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Кнопки в современном стиле */
+.sketch-btn {
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+    border: 2px solid #4b5332;
+    background: transparent;
+    color: #4b5332;
+    display: inline-block;
+}
+
+.sketch-btn:hover {
+    background: #4b5332;
+    color: #fdfaf0;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(75, 83, 50, 0.2);
+}
+
+/* 8. Адаптивность для планшетов и телефонов */
+@media (max-width: 900px) {
+    .journal-main {
+        padding: 50px 30px;
+        width: 95%;
+    }
+    
+    .journal-container {
+        grid-template-columns: 1fr; /* Схлопываем в одну колонку */
+        gap: 40px;
+    }
+    
+    .name {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 20px 0;
+    }
+    .journal-main {
+        border-radius: 20px;
+        padding: 40px 20px;
+    }
+    .fot {
+        font-size: 20px;
+    }
+}
